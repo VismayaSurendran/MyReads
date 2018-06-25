@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BookState from './BookState';
+import BookState from './files/BookState';
 
 class BookList extends Component{
     static propTypes = {
