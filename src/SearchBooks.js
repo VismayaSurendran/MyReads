@@ -1,7 +1,22 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import BookList from './BookList'
 
-export default class SearchBooks extends Component {
+ class SearchBooks extends Component {
+
+  static propTypes={
+    books: PropTypes.array.isRequired,
+    updateShelf: PropTypes.func.isRequired
+  };
+
+  componenWillUnmount(){
+    this.props.searchforBooks(" ");
+  }
+
+  searchforBooks=(query)=>{
+    this.props.searchforBooks(query.trim());
+  };
   
   render(){
     return (
@@ -13,9 +28,20 @@ export default class SearchBooks extends Component {
               </div>
              </div>
             <div className="search-books-results">
-              <ol className="books-grid"></ol>
+              <ol className="books-grid">
+              {this.props.books.map((book) => (
+                 <li key={book.id} className="list-item">
+                     <BookList
+                       updateShelf={this.props.updateShelf}
+                       book={book} />
+                         </li>
+                        ))
+                      }
+                   </ol>
             </div>
           </div>
           )
       }
   }
+
+  export default SearchBooks;
