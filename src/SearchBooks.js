@@ -13,7 +13,7 @@ import BookList from './BookList'
   componenWillUnmount(){
     this.props.searchforBooks(" ");
   }
-
+//resets
   searchforBooks=(query)=>{
     this.props.searchforBooks(query.trim());
   };
@@ -24,13 +24,13 @@ import BookList from './BookList'
             <div className="search-books-bar">
               <Link className="close-search" to="/"> Close </Link>
               <div className="search-books-input-wrapper">
-              <input type="text" placeholder="Search by title or author"/>
+              <input type="text" placeholder="Search by title or author"  onChange={(e) => this.searchforBooks(e.target.value)}/>
               </div>
              </div>
             <div className="search-books-results">
               <ol className="books-grid">
               {this.props.books.map((book) => (
-                 <li key={book.id} className="list-item">
+                 <li key={book.id} className="item">
                      <BookList
                        updateShelf={this.props.updateShelf}
                        book={book} />
