@@ -2,7 +2,7 @@
 
 
 This project helps to create a personal app to track the books which
-you are "Currently Reading", "Want to read", and "Rsead"
+you are "Currently Reading", "Want to read", and "Read"
 
 ## How to load the App
 
