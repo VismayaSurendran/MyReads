@@ -10,10 +10,11 @@ class BookList extends Component{
 
      render(){
         const { book } = this.props;
+        const noImage='./no-image.png'
         return(
             <div className="book" id={book.id}>
                 <div className="book-top">
-                    <div className="book-cover" style={{width: 128, height: 193, backgroundImage: `url("${book.imageLinks.thumbnail}")` }}>
+                    <div className="book-cover" style={{width: 128, height: 193, backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : noImage})` }}>
                     </div>
                     <BookState
                         book={book}
