@@ -1,13 +1,16 @@
 ﻿# MyReads Project
 
 
+This project helps to create a personal app to track the books which
+you are "Currently Reading", "Want to read", and "Rsead"
+
 ## How to load the App
 
 
 * clone/download the repository
 
 
-.
+
 * install all project dependencies in terminal with `npm install`
 
 * start the development server with `npm start`
